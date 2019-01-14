@@ -1,0 +1,12 @@
+<mat-grid-list cols="4" rowHeight="200px">
+
+<mat-grid-tile *ngFor="let fa of affiche.filmAffiche">
+  <mat-card style="width: 95%; height: 98%">
+    Film : {{fa.pk.film.titre}} <br>
+    Salle : {{fa.salle}} <br>
+    Horaire : {{fa.horaire}} <br>
+    <button mat-flat-button class="fixBottom" color="primary" [routerLink]="['/affiches/v', idAffiche, 'f', fa.pk.film.id]">Détails</button>
+  </mat-card>
+</mat-grid-tile>
+
+</mat-grid-list>

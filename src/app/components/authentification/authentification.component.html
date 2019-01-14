@@ -1,0 +1,29 @@
+  <div class="example-container" style="display: inline-grid; width: 50%; margin-left: auto; margin-right: auto;">
+    <h1>Authentification:</h1>
+
+    <mat-form-field>
+      <input matInput placeholder="Nom d'utilisateur" [(ngModel)]="username">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Mot de passe" [type]="mpCache ? 'password' : 'text'" [(ngModel)]="password">
+      <mat-icon matSuffix (click)="mpCache = !mpCache">{{mpCache ? 'visibility_off' : 'visibility'}}</mat-icon>
+      <mat-error (*ngIf)="!isConnectionValid"> Nom d'utilisateur ou mot de passe non valid! </mat-error>
+    </mat-form-field>
+
+    <div *ngIf="!isConnectionValid" style="font-size: 11px; color: crimson; font-style: italic; margin-bottom: 7px;">
+      *Nom d'utilisateur ou mot de passe invalid!
+    </div>
+
+    <button mat-raised-button color="primary" (click)="connexion()" style="width: 30%">Connexion</button>
+  </div>
+
+
+<!--<mat-card>-->
+  <!--<div class="24hr-example">-->
+    <!--<input placeholder="24hr format" aria-label="24hr format" [ngxTimepicker]="fullTime" [format]="24"  readonly>-->
+    <!--<ngx-material-timepicker #fullTime ></ngx-material-timepicker>-->
+  <!--</div>-->
+  <!--&lt;!&ndash;[enableKeyboardInput]="true"&ndash;&gt;-->
+<!--</mat-card>-->
+

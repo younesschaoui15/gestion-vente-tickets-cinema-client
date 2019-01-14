@@ -1,0 +1,15 @@
+<mat-grid-list cols="3" rowHeight="2:1">
+
+  <mat-grid-tile *ngFor="let a of affiches">
+    <mat-card style="width: 90%">
+      Affiche N° : {{a.id}} <br>
+      Date : {{a.date}} <br>
+      Films : {{a.filmAffiche.length}} <br>
+      <button mat-flat-button color="primary" [routerLink]="['v', a.id]">Voir</button>
+    </mat-card>
+
+  </mat-grid-tile>
+
+</mat-grid-list>
+
+<!--{{data|json}}-->
